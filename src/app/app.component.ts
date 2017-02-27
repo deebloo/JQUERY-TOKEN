@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, AfterViewInit } from '@angular/core';
 import { JQUERY_TOKEN } from './jquery-provider';
 
 @Component({
@@ -6,10 +6,14 @@ import { JQUERY_TOKEN } from './jquery-provider';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'app works!';
 
-  constructor(@Inject(JQUERY_TOKEN) $) {
+  constructor(@Inject(JQUERY_TOKEN) private $: any) {
     console.log($);
+  }
+
+  ngAfterViewInit() {
+    this.$('#hi').text('asdfasdf');
   }
 }
