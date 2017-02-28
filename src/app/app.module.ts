@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MyComponent } from './my-component.component';
 import { JQUERY_PROVIDER } from './jquery-provider';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, 
+    MyComponent
   ],
   imports: [
     BrowserModule,
